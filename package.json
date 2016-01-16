@@ -1,0 +1,22 @@
+{
+  "name": "twitcher",
+  "version": "1.0.0",
+  "description": "Posts a Tweet whenever Cody starts streaming on Twitch.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm install express --save"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chrysaor716/Twitcher.git"
+  },
+  "author": "Christina Nguyen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Chrysaor716/Twitcher/issues"
+  },
+  "homepage": "https://github.com/Chrysaor716/Twitcher#readme",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
