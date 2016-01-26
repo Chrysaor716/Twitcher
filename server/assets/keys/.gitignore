@@ -1,0 +1,6 @@
+# Ignore all files in directory
+*
+
+# Tell git to include the .gitignore file,
+#	so that the directory isn't empty.
+!.gitignore
