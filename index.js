@@ -2,7 +2,7 @@ var express = require('express'),
     http = require('http'),
     path = require('path');
 var Twitter = require('twitter');
-var twitKeys = require('./server/assets/keys');
+var twitKeys = require('./server/assets/keys/twitterKeys.js');
 
 var app = express(); // Create an instance of express
 
@@ -21,7 +21,7 @@ var twitClient = new Twitter({
 	access_token_secret: twitKeys.access_token_secret
 });
 
-twitClient.post('statuses/update', {status: 'A dev Tweet from Node.js! #iTotallyKnowWhatImDoing #camelCaseTwitterPeeps'}, function(error, tweet, response) {
+twitClient.post('statuses/update', {status: 'Are my 5 followers enjoying my random test Tweets? #whyareyoufollowingme'}, function(error, tweet, response) {
 	if(error) throw error;
 	console.log(tweet);	// The body of the Tweet
 	console.log(response);	// The raw response object
