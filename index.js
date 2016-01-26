@@ -2,6 +2,7 @@ var express = require('express'),
     http = require('http'),
     path = require('path');
 var Twitter = require('twitter');
+var twitKeys = require('./server/assets/keys');
 
 var app = express(); // Create an instance of express
 
@@ -13,11 +14,14 @@ var success = function(data) {
 	console.log('Data [%s]', data);
 };
 
-//	OAuth
-var client = new Twitter({
+var twitClient = new Twitter({
+	consumer_key: twitKeys.consumer_key,
+	consumer_secret: twitKeys.consumer_secret,
+	access_token_key: twitKeys.access_token_key,
+	access_token_secret: twitKeys.access_token_secret
 });
 
-client.post('statuses/update', {status: 'A dev Tweet from Node.js! #iTotallyKnowWhatImDoing #camelCaseTwitterPeeps'}, function(error, tweet, response) {
+twitClient.post('statuses/update', {status: 'A dev Tweet from Node.js! #iTotallyKnowWhatImDoing #camelCaseTwitterPeeps'}, function(error, tweet, response) {
 	if(error) throw error;
 	console.log(tweet);	// The body of the Tweet
 	console.log(response);	// The raw response object
